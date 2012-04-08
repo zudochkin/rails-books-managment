@@ -1,4 +1,9 @@
 # Simple Rails application
+
+### Example screenshot:
+
+![Example](http://www.habrastorage.com/images/railsbooks.jpg)
+
 Gems used:
 
 * **devise** for registration/signing up
