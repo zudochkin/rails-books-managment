@@ -20,6 +20,20 @@ In the layout we use devise's helper `user_signed_in?` for showing menu:
 
 Also we use jQuery jGrowl plugin for showing flash notices, alerts and errors.
 
+You cannot destroy category unless any book is present in it. Same for statuses.
+
+Example of category model
+
+    class Category < ActiveRecord::Base
+      attr_accessible :name
+
+      has_many :books
+
+      def destroy
+        super if books.count == 0
+      end
+    end
+
 ### Models
 
 * **user** for devise
@@ -27,4 +41,5 @@ Also we use jQuery jGrowl plugin for showing flash notices, alerts and errors.
 * **book** users' books
 * **status** for books' statuses (should read, read or etc)
 
-
+### Live example 
+You can see on [heroku](http://deep-autumn-9934.herokuapp.com/)
